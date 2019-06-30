@@ -1,0 +1,26 @@
+{
+  "name": "word-scramble-backend",
+  "version": "1.0.0",
+  "description": "A back end repo for the word scramble app Ocean Commotion",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asdFletcher/word-scramble-backend.git"
+  },
+  "keywords": [],
+  "author": "Fletcher LaRue",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asdFletcher/word-scramble-backend/issues"
+  },
+  "homepage": "https://github.com/asdFletcher/word-scramble-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1"
+  }
+}

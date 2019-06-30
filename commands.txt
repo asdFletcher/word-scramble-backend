@@ -1,0 +1,6 @@
+echo '{"name":"bob","score":100}' | http post :3001/save-score
+echo '{"name":"mary","score":222}' | http post :3001/save-score
+echo '{"name":"ken","score":50}' | http post :3001/save-score
+echo '{"name":"king tut","score":80}' | http post :3001/save-score
+
+http :3001/get-scores

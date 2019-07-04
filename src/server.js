@@ -44,7 +44,7 @@ const getTopScores = async () => {
   }
   
   // sort the scores descending
-  result = result.sort( (a, b) => b.score - a.score);
+  result = result.sort((a, b) => b.score - a.score);
 
   // return the top of the sorted list
   return result.slice(0,10);
@@ -62,10 +62,10 @@ const handleGetScores = async (req, res, next) => {
 const handleSaveScore = async (req, res, next) => {
   try {
     // save the new score
-    await saveScoreToDatabase(req.body);
+    let result = await saveScoreToDatabase(req.body);
 
-    // return the new top 10
-    res.send(await getTopScores());
+    // send back the db response
+    res.send(result.json());
   } catch (err) {
     next(err);
   }

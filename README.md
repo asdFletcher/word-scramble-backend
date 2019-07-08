@@ -4,7 +4,7 @@ A back end repo for the word scramble app `Ocean Commotion`
 This server uses a `Redis` database to store scores, and an `Express` server to connect to that database and serve up and save new score data to users on the front end.
 
 
-Running the server and database locally:
+## Running the server and database locally:
 
 ### Step 1: Start the `Redis` database:
 1. open a new terminal
@@ -40,3 +40,13 @@ Manually remove the entire `Redis` table:
 
 Manually add a score to the database:
 - from the terminal run: `echo '{"name":"king tut","score":80}' | http post :3001/save-score`
+
+
+## Running the server and database on Heroku:
+
+- Create the heroku project: `heroku create <name for backend app>`
+- Verify the remote has bee added: `git remote -v`
+- On the heroku UI set the app to update from Github automatically:
+  - Deploy -> Github -> Enter repo name -> connect -> enable automatic deploys
+- Provision a `Redis` database for your backend app on heroku:
+  - Resource -> Search `Redis` -> select free tier

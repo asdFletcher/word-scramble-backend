@@ -5,3 +5,6 @@ echo '{"name":"king tut","score":1}' | http post :3001/save-score
 
 
 http :3001/get-scores
+
+http https://ocean-commotion-backend.herokuapp.com/get-scores/test
+http https://ocean-commotion-backend.herokuapp.com/get-scores

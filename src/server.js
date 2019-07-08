@@ -61,6 +61,7 @@ const handleGetScores = async (req, res, next) => {
 
 const handleSaveScore = async (req, res, next) => {
   try {
+    console.log(`🍊 incoming data: `, req.body);
     // save the new score
     let result = await saveScoreToDatabase(req.body);
 

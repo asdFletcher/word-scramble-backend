@@ -61,12 +61,11 @@ const handleGetScores = async (req, res, next) => {
 
 const handleSaveScore = async (req, res, next) => {
   try {
-    console.log(`🍊 incoming data: `, req.body);
     // save the new score
     let result = await saveScoreToDatabase(req.body);
 
-    // send back the db response
-    res.send(result.json());
+    // send back the submitted score data
+    res.send(req.body);
   } catch (err) {
     next(err);
   }

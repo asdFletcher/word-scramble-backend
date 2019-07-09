@@ -5,13 +5,13 @@ echo '{"name":"mary","score":222}' | http post :3001/save-score
 echo '{"name":"ken","score":50}' | http post :3001/save-score
 echo '{"name":"king tut","score":1}' | http post :3001/save-score
 
-
 http :3001/get-scores
 
+
+Deployed:
 http https://ocean-commotion-backend.herokuapp.com/get-scores/test
 http https://ocean-commotion-backend.herokuapp.com/get-scores
 
-Deployed:
-
 echo '{"name":"king tut","score":1}' | http post https://ocean-commotion-backend.herokuapp.com/save-score
 echo '{"name":"ben","score":3}' | http post https://ocean-commotion-backend.herokuapp.com/save-score
+

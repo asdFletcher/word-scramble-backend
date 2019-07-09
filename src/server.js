@@ -50,9 +50,10 @@ const getTopScores = async () => {
   return result.slice(0,10);
 }
 
-const removeFirstPlace = async () => {
-  return await client.lpop('scores');
-}
+// const removeFirstPlace = async () => {
+//   return await client.lpop('scores');
+// }
+
 const removeAllScores = async () => {
   return await client.del('scores');
 }
@@ -78,13 +79,13 @@ const handleSaveScore = async (req, res, next) => {
   }
 }
 
-const handleRemoveFirstPlace = async (req, res, next) => {
-  try {
-    res.json(await removeFirstPlace());
-  } catch (err) {
-    next(err);
-  }
-}
+// const handleRemoveFirstPlace = async (req, res, next) => {
+//   try {
+//     res.json(await removeFirstPlace());
+//   } catch (err) {
+//     next(err);
+//   }
+// }
 
 const handleRemoveAllScores = async (req, res, next) => {
   try {
@@ -101,7 +102,7 @@ app.post('/save-score', handleSaveScore);
 app.get('/get-scores', handleGetScores);
 
 // Admin routes for maintaining database
-app.get('/remove-first-place', handleRemoveFirstPlace);
+// app.get('/remove-first-place', handleRemoveFirstPlace);
 app.get('/remove-all-scores', handleRemoveAllScores);
 
 app.get('*', (req, res, next)=>{

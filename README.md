@@ -56,6 +56,7 @@ It can be handy to have a terminal open showing the heroku logs: `heroku logs --
 ### Step 2: Testing the deployed backend independently:
 - Verify that the logs show
 - Hit this route with httpie or your browser: `https://<your app name>.herokuapp.com/get-scores`
+  - In the case of the word-scramble-backend, the url is: `https://ocean-commotion-backend.herokuapp.com/get-scores`
   - You should get an empty scores array if the setup was successful.
 
 - The most common problem will be the `Redis` addon not being provisioned correctly
@@ -66,6 +67,8 @@ It can be handy to have a terminal open showing the heroku logs: `heroku logs --
   - If you update the `.env` file you must restart the app for them to take effect
   - Make sure your environment variables have been updated to something like:
   - `REACT_APP_BACKEND_BASE_URL=https://<your app name>.herokuapp.com`
+  - Or in this case:
+    - `REACT_APP_BACKEND_BASE_URL=https://ocean-commotion-backend.herokuapp.com/get-scores`
 
 - Verify that the front-end (when running locally) is hitting the correct backend URLs:
   - Go to the high-scores page and watch the `heroku logs --tail` terminal
